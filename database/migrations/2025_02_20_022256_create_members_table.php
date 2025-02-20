@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->integer('gender');
             $table->integer('age');
+            $table->string('gender');
         });
     }
 
