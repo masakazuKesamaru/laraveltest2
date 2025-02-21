@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Models;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+use App\Models\Eating;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Member extends Model
 {
@@ -18,5 +20,8 @@ class Member extends Model
         'gender',
     ];
 
-    
+    public function eat()
+    {
+        return $this->hasMany(Eating::class);
+    }
 }

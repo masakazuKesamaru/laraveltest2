@@ -1,6 +1,6 @@
 <?php
-
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\EatingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/members', [MemberController::class, 'index']);
+Route::get('/members', [MemberController::class, 'index'])->name('members');
+Route::get('/members/{id}', [MemberController::class, 'show'])->name('members.show');
+Route::get('/members/{id}/update', [MemberController::class, 'update'])->name('members.update');
+
+Route::put('/eatings/{id}', [EatingController::class, 'update'])->name('eatings.update');
